@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Rubik&amp;subset=latin-ext" rel="stylesheet">
+  <title>Погода в браузере</title>
+</head>
+  <body>
+    <header class="page-header">
+      <div class="page-header__inner">
+        <section class="info">
+          <h1 class="info__heading">Погода в браузере</h1>
+          <p class="info__description">Серьезно, прямо в браузере!</p>
+        </section>
+        <article class="example">
+          <h2 class="example__heading">Your local weather:</h2>
+          <div class="default-city">
+            <h2 class="city__name city__name--default"></h2>
+            <strong class="city__temp--default"></strong>
+          </div>
+        </article>
+      </div>
+    </header>
+    <main class="application">
+      <section class="application__inner">
+        <div class="application__control-panel">
+          <form class="controls">
+            <input class="controls__text" type="text" placeholder="Search for city...">
+            <input class="btn btn--go" type="submit" value="Go!">
+            <button class="btn btn--remove">Remove all</button>
+          </form>
+        </div>
+        <ul class="cities">
+        </ul>
+      </section>
+    </main>
+    <script src="js/bundle.js"></script>
+  </body>
+</html>

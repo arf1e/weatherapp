@@ -1,0 +1,13 @@
+.page-header {
+  margin: 0;
+  background-color: #74217D;
+  color: white;
+  padding: 40px;
+}
+
+.page-header__inner {
+  display: flex;
+  max-width: 850px;
+  margin: 0 auto;
+  justify-content: space-between;
+}

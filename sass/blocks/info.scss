@@ -1,0 +1,16 @@
+.info {
+  flex-basis: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.info__heading {
+  margin: 0;
+  font-size: 54px;
+}
+
+.info__description {
+  width: 400px;
+}

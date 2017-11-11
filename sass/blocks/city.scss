@@ -1,0 +1,16 @@
+.city {
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid black;
+  width: 670px;
+  margin: 10px auto;
+  display: flex;
+}
+
+.city__info {
+  display: flex;
+}
+
+.city__name {
+  margin-top: 0;
+}
