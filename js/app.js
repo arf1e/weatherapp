@@ -27,6 +27,9 @@ form.addEventListener('submit', function(event) {
   }
 });
 
+Sortable.create(ul);
+
+
 // Удаляем:
 ul.addEventListener('click', (evt) => {
   if (evt.target.tagName === 'SPAN') {
@@ -47,6 +50,7 @@ remvBtn.addEventListener('click', (evt) => {
   });
 });
 
+// Создаем элемент списка:
 function createCity (li, ul, data) {
   li.className = 'city'
   li.innerHTML = `<div class="city__info"><h2 class="city__name"> ${data.list[0].name}</h2><img src="http://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png"></div>`;

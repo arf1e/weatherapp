@@ -4,7 +4,11 @@
   "description": "",
   "main": "city.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint 'sass/**/*.scss' --syntax scss",
+    "test": "npm run editorconfig && npm run stylelint",
+    "build": "gulp build",
+    "start": "npm run build && gulp serve"
   },
   "author": "",
   "license": "ISC",
@@ -21,15 +25,9 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "jquery": "^3.2.1",
+    "jquery-ui": "^1.12.1",
     "run-sequence": "^2.2.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.9.0"
-  },
-   "scripts": {
-    "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint 'sass/**/*.scss' --syntax scss",
-    "test": "npm run editorconfig && npm run stylelint",
-    "build": "gulp build",
-    "start": "npm run build && gulp serve"
   }
 }

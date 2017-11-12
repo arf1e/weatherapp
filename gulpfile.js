@@ -1,12 +1,11 @@
 "use strict";
 
 var browserify = require('browserify'),
-//    watchify = require('watchify'),
     gulp = require('gulp'),
     source = require('vinyl-source-stream'),
     sourceFile = './js/app.js',
-    destFolder = './build/js',
-    destFile = 'app.js',
+    destFolder = './build/js/',
+    destFile = 'bundle.js',
     sass = require("gulp-sass"),
     plumber = require("gulp-plumber"),
     postcss = require("gulp-postcss"),
