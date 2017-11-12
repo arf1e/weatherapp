@@ -1,10 +1,20 @@
 .city {
   padding: 15px;
   border-radius: 5px;
-  border: 1px solid black;
-  width: 670px;
+  border: 2px solid #74217D;
+  width: 665px;
   margin: 10px auto;
   display: flex;
+  justify-content: space-between;
+  transition: 0.3s;
+  
+  &:hover {
+    border-color: #C861D3;
+  }
+  
+  &:hover .city__remove {
+    color: #910033;
+  }
 }
 
 .city__info {
@@ -13,4 +23,19 @@
 
 .city__name {
   margin-top: 0;
+}
+
+.city__weather {
+  margin-right: auto;
+  align-self: flex-start;
+}
+
+.city__remove {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }

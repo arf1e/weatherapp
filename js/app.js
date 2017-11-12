@@ -107,7 +107,7 @@ remvBtn.addEventListener('click', (evt) => {
 function createCity (li, ul, data) {
   li.className = 'city'
   li.innerHTML = `<div class="city__info"><h2 class="city__name">${data.list[0].name}</h2><img src="http://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png"></div>`;
-  li.innerHTML += `<div class="city__weather"><strong class="city__temp">${data.list[0].main.temp}°C, ${data.list[0].weather[0].main}</strong></div><span class="city--remove">X</span>`;
+  li.innerHTML += `<div class="city__weather"><strong class="city__temp">${data.list[0].main.temp}°C, ${data.list[0].weather[0].main}</strong></div><span class="city__remove">X</span>`;
   ul.appendChild(li);
   console.log(data);
 }
