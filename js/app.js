@@ -10,7 +10,7 @@ const remvBtn = $('.btn--remove')[0];
 // LocalStorage:
 
 function getRecentSearches() {
-  var searches = localStorage.getItem('recentSearches');
+  let searches = localStorage.getItem('recentSearches');
   if (searches) {
     return JSON.parse(searches);
   } else {
@@ -19,7 +19,7 @@ function getRecentSearches() {
 }
 
  function saveSearchString(string) {
-   var searches = getRecentSearches();
+   let searches = getRecentSearches();
    if (!searches || searches.indexOf(string) > -1) {
      return false;
    }
