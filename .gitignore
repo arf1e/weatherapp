@@ -2,6 +2,7 @@
 .idea
 *.sublime*
 build/
+dist/
 css/*.css
 node_modules/
 npm-debug.*
