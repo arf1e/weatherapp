@@ -29,7 +29,6 @@ function getRecentSearches() {
   }
 
 function removeSearches() {
-   console.log(localStorage.getItem('recentSearches'));
    localStorage.removeItem('recentSearches');
 }
 
@@ -37,14 +36,14 @@ var recentSearches = getRecentSearches();
 recentSearches.forEach(function(searchString){
   let li = document.createElement('li');
   $.ajax({
-    url: `http://api.openweathermap.org/data/2.5/find?q=${searchString}&units=metric&APPID=cb5ea26e82a5e02a185b6a887c9a16ac`,
+    url: `https://api.openweathermap.org/data/2.5/find?q=${searchString}&units=metric&APPID=cb5ea26e82a5e02a185b6a887c9a16ac`,
     type: 'GET',
     dataType: 'jsonp',
     success: (data) => {
       createCity(li, ul, data);
     },
     error: (error) => {
-      console.log('benis');
+      console.log(error.message);
     }
   })
 });
@@ -57,7 +56,7 @@ form.addEventListener('submit', function(event) {
   if (city.length > 0) {
     let li = document.createElement('li');
     $.ajax({
-      url: `http://api.openweathermap.org/data/2.5/find?q=${city}&units=metric&APPID=cb5ea26e82a5e02a185b6a887c9a16ac`,
+      url: `https://api.openweathermap.org/data/2.5/find?q=${city}&units=metric&APPID=cb5ea26e82a5e02a185b6a887c9a16ac`,
       type: 'GET',
       dataType: 'jsonp',
       success: (data) => {
@@ -66,7 +65,7 @@ form.addEventListener('submit', function(event) {
         addInput.value = '';
       },
       error: (error) => {
-        console.log(`Опачки ${error.message}`);
+        console.log(error.message);
       }
     });
   } else {
@@ -106,10 +105,9 @@ remvBtn.addEventListener('click', (evt) => {
 // Создаем элемент списка:
 function createCity (li, ul, data) {
   li.className = 'city'
-  li.innerHTML = `<div class="city__info"><h2 class="city__name">${data.list[0].name}</h2><img src="http://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png"></div>`;
+  li.innerHTML = `<div class="city__info"><h2 class="city__name">${data.list[0].name}</h2><img src="https://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png"></div>`;
   li.innerHTML += `<div class="city__weather"><strong class="city__temp">${data.list[0].main.temp}°C, ${data.list[0].weather[0].main}</strong></div><span class="city__remove">X</span>`;
   ul.appendChild(li);
-  console.log(data);
 }
 
 
@@ -134,14 +132,13 @@ function success(position) {
   let dcName = $('.city__name--default')[0];
   let dcTemp = $('.city__temp--default')[0];
   $.ajax({
-    url: `http://api.openweathermap.org/data/2.5/weather?lat=${dcCrds.lat}&lon=${dcCrds.lon}&units=metric&APPID=cb5ea26e82a5e02a185b6a887c9a16ac`,
+    url: `https://api.openweathermap.org/data/2.5/weather?lat=${dcCrds.lat}&lon=${dcCrds.lon}&units=metric&APPID=cb5ea26e82a5e02a185b6a887c9a16ac`,
     type: 'GET',
     dataType: 'jsonp',
     success: (data) => {
-      console.log(data);
       dcName.textContent = data.name;
       dcTemp.textContent = `${data.main.temp} °C, ${data.weather[0].main}`;
-      dcName.innerHTML += `<img class="icon" src="http://openweathermap.org/img/w/${data.weather[0].icon}.png">`;
+      dcName.innerHTML += `<img class="icon" src="https://openweathermap.org/img/w/${data.weather[0].icon}.png">`;
     },
     error: function (error) {
       console.log(error);
