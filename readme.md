@@ -1,8 +1,8 @@
 # Тестовое задание "Погода в браузере"
 
 Погодное одностраничное веб-приложение.
-Данные взяты [отсюда](http://openweathermap.org/)
-Само приложение [тут](https://weatherapp-h-d.herokuapp.com/index.html)
+* Данные взяты [отсюда](http://openweathermap.org/)
+* Само приложение [тут](https://weatherapp-h-d.herokuapp.com/index.html)
 
 ---
 
