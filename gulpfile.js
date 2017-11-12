@@ -78,5 +78,5 @@ gulp.task("serve", function() {
 
   gulp.watch("sass/**/*.{scss,sass}", ["style"]);
   gulp.watch("*.html", ["html"]);
-  gulp.watch("*.js", ["browserify"]);
+  gulp.watch("js/**/*.js", ["browserify"]);
 });
